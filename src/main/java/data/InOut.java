@@ -1,6 +1,5 @@
 package data;
 
-import application.Point;
 import javafx.stage.FileChooser;
 
 import java.io.*;
@@ -11,15 +10,17 @@ import java.util.regex.Pattern;
 
 public class InOut {
 
-    public static List<Point> load() {
-        List<Point> listOfPoint = new ArrayList<>();
-        Point point;
-        try (BufferedReader in = new BufferedReader(new FileReader(new FileChooser().showOpenDialog(null)))) {
+    // new FileChooser().showOpenDialog(null)
+
+    public static List<Sample> load(File file) {
+        List<Sample> listOfPoint = new ArrayList<>();
+        Sample point;
+        try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = in.readLine()) != null) {
                 if (!Pattern.compile("^-?\\d+,?\\d*\\s-?\\d+,?\\d*").matcher(line).find())
                     continue;
-                point = new Point();
+                point = new Sample();
                 try {
                     Matcher matcher = Pattern.compile("-?\\d+,?\\d*").matcher(line);
                     matcher.find();
@@ -39,5 +40,17 @@ public class InOut {
             e1.printStackTrace();
         }
         return listOfPoint;
+    }
+
+    public static void save(ArrayList list, String fileName) {
+        try (BufferedWriter out = new BufferedWriter(new FileWriter(fileName))) {
+            for (Object p : list) {
+                out.write(p.toString());
+                out.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(fileName);
     }
 }

@@ -1,9 +1,11 @@
 package models;
 
-import algorithms.ParametersSet;
+import data.Data;
+import exceptions.WrongParametersSetsException;
 
 public interface Model {
 
-    public Double calculate(ParametersSet parametersSet);
+    public Double calculate(ParametersSet parametersSet, Data data) throws WrongParametersSetsException;
+
 
 }
