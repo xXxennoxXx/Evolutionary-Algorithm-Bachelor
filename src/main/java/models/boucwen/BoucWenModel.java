@@ -1,7 +1,5 @@
 package models.boucwen;
 
-import application.ParametrPoint;
-import application.Point;
 import data.Data;
 import data.Sample;
 import exceptions.WrongParametersSetsException;
@@ -67,10 +65,10 @@ public class BoucWenModel implements Model {
             }
 
             if (v > 0) {
-                zp = (double) -gammat * Math.abs(v) * Math.pow(Math.abs(z), nt - 1) * z
+                zp = -gammat * Math.abs(v) * Math.pow(Math.abs(z), nt - 1) * z
                         - betat * v * Math.pow(Math.abs(z), nt) + at * v;
             } else if (v <= 0) {
-                zp = (double) -gammac * Math.abs(v) * Math.pow(Math.abs(z), nc - 1) * z
+                zp = -gammac * Math.abs(v) * Math.pow(Math.abs(z), nc - 1) * z
                         - betac * v * Math.pow(Math.abs(z), nc) + ac * v;
             } else {
                 break;
@@ -96,5 +94,10 @@ public class BoucWenModel implements Model {
             curentParametrDeflection = curentParametrDeflection + p;
         }
         return curentParametrDeflection;
+    }
+
+    @Override
+    public ParametersSet getNewParametersSet() {
+        return new BoucWenParameterSet();
     }
 }

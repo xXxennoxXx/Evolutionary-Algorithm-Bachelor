@@ -11,8 +11,11 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,230 +24,217 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0"
-	prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="gui.MainController">
-	<top>
-		<MenuBar BorderPane.alignment="CENTER">
-			<menus>
-				<Menu mnemonicParsing="false" text="File">
-					<items>
-						<MenuItem mnemonicParsing="false" onAction="#open"
-							text="Open" />
-						<SeparatorMenuItem mnemonicParsing="false" />
-						<MenuItem mnemonicParsing="false" text="Close" />
-					</items>
-				</Menu>
-				<Menu mnemonicParsing="false" text="Edit">
-					<items>
-						<MenuItem mnemonicParsing="false" text="Delete" />
-					</items>
-				</Menu>
-				<Menu mnemonicParsing="false" text="Help">
-					<items>
-						<MenuItem mnemonicParsing="false" text="About" />
-					</items>
-				</Menu>
-			</menus>
-		</MenuBar>
-	</top>
-	<center>
-		<AnchorPane BorderPane.alignment="CENTER">
-			<children>
-				<ScatterChart fx:id="fxChart"
-					alternativeColumnFillVisible="true" layoutX="149.0" layoutY="34.0"
-					title="Force in function of displacement"
-					AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="0.0"
-					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-					<xAxis>
-						<NumberAxis label="Displacement [mm]" side="BOTTOM" />
-					</xAxis>
-					<yAxis>
-						<NumberAxis label="Force [N]" side="LEFT" />
-					</yAxis>
-				</ScatterChart>
-				<ScatterChart fx:id="ftChart" layoutX="318.0"
-					layoutY="317.0" scaleShape="false"
-					title="Force in function of time" AnchorPane.bottomAnchor="0.0"
-					AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-					AnchorPane.topAnchor="400.0">
-					<xAxis>
-						<NumberAxis label="Time [s]" side="BOTTOM" />
-					</xAxis>
-					<yAxis>
-						<NumberAxis label="Force [N]" side="LEFT" />
-					</yAxis>
-				</ScatterChart>
-			</children>
-		</AnchorPane>
-	</center>
-	<right>
-		<AnchorPane prefWidth="300.0" BorderPane.alignment="CENTER">
-			<children>
-				<VBox alignment="TOP_CENTER" layoutX="5.0" layoutY="29.0"
-					AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
-					AnchorPane.topAnchor="5.0">
-					<children>
-						<Label text="Algorithm parameters">
-							<font>
-								<Font size="18.0" />
-							</font>
-							<VBox.margin>
-								<Insets bottom="10.0" />
-							</VBox.margin>
-						</Label>
-						<HBox alignment="CENTER">
-							<children>
-								<VBox prefWidth="160.0">
-									<children>
-										<Label prefHeight="20.0" text="Number of population">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</Label>
-										<Label prefHeight="20.0" text="Size of population">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</Label>
-										<Label prefHeight="20.0" text="Chance to mutate">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</Label>
-										<Label prefHeight="20.0" text="Chance to cross">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</Label>
-										<Label prefHeight="20.0"
-											text="Percent of stay population">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</Label>
-									</children>
-								</VBox>
-								<VBox fx:id="vbTextBox" prefWidth="84.0">
-									<children>
-										<TextField fx:id="textBoxNumberOfPopulation"
-											alignment="CENTER_RIGHT" prefHeight="20.0" promptText="100">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</TextField>
-										<TextField fx:id="textBoxSizeOfPopulation"
-											alignment="CENTER_RIGHT" prefHeight="20.0" promptText="100">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</TextField>
-										<TextField fx:id="txtBoxChanceToMutate"
-											alignment="CENTER_RIGHT" prefHeight="20.0" promptText="10">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</TextField>
-										<TextField fx:id="textBoxChanceToCross"
-											alignment="CENTER_RIGHT" prefHeight="20.0" promptText="50">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</TextField>
-										<TextField fx:id="textBoxStayPercent"
-											alignment="CENTER_RIGHT" prefHeight="20.0" promptText="20%">
-											<padding>
-												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-											</padding>
-										</TextField>
-									</children>
-								</VBox>
-							</children>
-						</HBox>
-						<ProgressBar fx:id="pbCal" prefWidth="200.0"
-							progress="0.0">
-							<opaqueInsets>
-								<Insets />
-							</opaqueInsets>
-							<VBox.margin>
-								<Insets bottom="10.0" top="10.0" />
-							</VBox.margin>
-						</ProgressBar>
-						<Button fx:id="btnCalculate" maxWidth="250.0"
-							mnemonicParsing="false" onAction="#calculate" prefHeight="50.0"
-							text="CALCULATE">
-							<VBox.margin>
-								<Insets />
-							</VBox.margin>
-						</Button>
-						<Separator prefWidth="200.0">
-							<VBox.margin>
-								<Insets bottom="10.0" top="10.0" />
-							</VBox.margin>
-						</Separator>
-						<Label text="Charts options">
-							<font>
-								<Font size="18.0" />
-							</font>
-						</Label>
-						<Button fx:id="btnClear" maxWidth="250.0"
-							mnemonicParsing="false" onAction="#clearCharts" prefHeight="50.0"
-							text="Clear charts">
-							<VBox.margin>
-								<Insets bottom="10.0" top="10.0" />
-							</VBox.margin>
-						</Button>
-						<Button fx:id="btnDraw" maxWidth="250.0"
-							mnemonicParsing="false" onAction="#drawCharts" prefHeight="50.0"
-							text="Draw charts" />
-						<Separator prefWidth="200.0">
-							<VBox.margin>
-								<Insets bottom="10.0" top="10.0" />
-							</VBox.margin>
-						</Separator>
-						<Label text="Sampling frequency">
-							<font>
-								<Font size="18.0" />
-							</font>
-						</Label>
-						<HBox fx:id="hbFrequency" alignment="CENTER" disable="true"
-							prefHeight="50.0" prefWidth="200.0">
-							<children>
-								<RadioButton mnemonicParsing="false" selected="true"
-									text="Auto">
-									<padding>
-										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-									</padding>
-									<toggleGroup>
-										<ToggleGroup fx:id="frequencyRadioButton" />
-									</toggleGroup>
-								</RadioButton>
-								<RadioButton mnemonicParsing="false" text="User"
-									toggleGroup="$frequencyRadioButton">
-									<padding>
-										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-									</padding>
-								</RadioButton>
-							</children>
-						</HBox>
-						<TextField disable="true" promptText="100Hz" />
-					</children>
-				</VBox>
-			</children>
-		</AnchorPane>
-	</right>
-	<bottom>
-		<AnchorPane prefHeight="200.0" prefWidth="200.0"
-			BorderPane.alignment="CENTER">
-			<children>
-				<ListView fx:id="lvParameterList"
-					AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-				</ListView>
-			</children>
 
-		</AnchorPane>
-	</bottom>
-</BorderPane>
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1400.0">
+      	<top>
+      		<MenuBar BorderPane.alignment="CENTER">
+      			<menus>
+      				<Menu mnemonicParsing="false" text="File">
+      					<items>
+      						<MenuItem mnemonicParsing="false" onAction="#open" text="Open" />
+      						<SeparatorMenuItem mnemonicParsing="false" />
+      						<MenuItem mnemonicParsing="false" text="Close" />
+      					</items>
+      				</Menu>
+      				<Menu mnemonicParsing="false" text="Edit">
+      					<items>
+      						<MenuItem mnemonicParsing="false" text="Delete" />
+      					</items>
+      				</Menu>
+      				<Menu mnemonicParsing="false" text="Help">
+      					<items>
+      						<MenuItem mnemonicParsing="false" text="About" />
+      					</items>
+      				</Menu>
+      			</menus>
+      		</MenuBar>
+      	</top>
+      	<right>
+      		<AnchorPane prefWidth="300.0" BorderPane.alignment="CENTER">
+      			<children>
+      				<VBox alignment="TOP_CENTER" layoutX="5.0" layoutY="29.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      					<children>
+      						<Label text="Algorithm parameters">
+      							<font>
+      								<Font size="18.0" />
+      							</font>
+      							<VBox.margin>
+      								<Insets bottom="10.0" />
+      							</VBox.margin>
+      						</Label>
+      						<HBox alignment="CENTER">
+      							<children>
+      								<VBox prefWidth="160.0">
+      									<children>
+      										<Label prefHeight="20.0" text="Number of population">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</Label>
+      										<Label prefHeight="20.0" text="Size of population">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</Label>
+      										<Label prefHeight="20.0" text="Chance to mutate">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</Label>
+      										<Label prefHeight="20.0" text="Chance to cross">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</Label>
+      										<Label prefHeight="20.0" text="Percent of stay population">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</Label>
+      									</children>
+      								</VBox>
+      								<VBox fx:id="vbTextBox" prefWidth="84.0">
+      									<children>
+      										<TextField fx:id="textBoxNumberOfPopulation" alignment="CENTER_RIGHT" prefHeight="20.0" promptText="100">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</TextField>
+      										<TextField fx:id="textBoxSizeOfPopulation" alignment="CENTER_RIGHT" prefHeight="20.0" promptText="100">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</TextField>
+      										<TextField fx:id="txtBoxChanceToMutate" alignment="CENTER_RIGHT" prefHeight="20.0" promptText="10">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</TextField>
+      										<TextField fx:id="textBoxChanceToCross" alignment="CENTER_RIGHT" prefHeight="20.0" promptText="50">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</TextField>
+      										<TextField fx:id="textBoxStayPercent" alignment="CENTER_RIGHT" prefHeight="20.0" promptText="20%">
+      											<padding>
+      												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      											</padding>
+      										</TextField>
+      									</children>
+      								</VBox>
+      							</children>
+      						</HBox>
+      						<ProgressBar fx:id="pbCal" prefWidth="200.0" progress="0.0">
+      							<opaqueInsets>
+      								<Insets />
+      							</opaqueInsets>
+      							<VBox.margin>
+      								<Insets bottom="10.0" top="10.0" />
+      							</VBox.margin>
+      						</ProgressBar>
+      						<Button fx:id="btnCalculate" maxWidth="250.0" mnemonicParsing="false" onAction="#calculate" prefHeight="50.0" text="CALCULATE">
+      							<VBox.margin>
+      								<Insets />
+      							</VBox.margin>
+      						</Button>
+      						<Separator prefWidth="200.0">
+      							<VBox.margin>
+      								<Insets bottom="10.0" top="10.0" />
+      							</VBox.margin>
+      						</Separator>
+      						<Label text="Charts options">
+      							<font>
+      								<Font size="18.0" />
+      							</font>
+      						</Label>
+      						<Button fx:id="btnClear" maxWidth="250.0" mnemonicParsing="false" onAction="#clearCharts" prefHeight="50.0" text="Clear charts">
+      							<VBox.margin>
+      								<Insets bottom="10.0" top="10.0" />
+      							</VBox.margin>
+      						</Button>
+      						<Button fx:id="btnDraw" maxWidth="250.0" mnemonicParsing="false" onAction="#drawCharts" prefHeight="50.0" text="Draw charts" />
+      						<Separator prefWidth="200.0">
+      							<VBox.margin>
+      								<Insets bottom="10.0" top="10.0" />
+      							</VBox.margin>
+      						</Separator>
+      						<Label text="Sampling frequency">
+      							<font>
+      								<Font size="18.0" />
+      							</font>
+      						</Label>
+      						<HBox fx:id="hbFrequency" alignment="CENTER" disable="true" prefHeight="50.0" prefWidth="200.0">
+      							<children>
+      								<RadioButton mnemonicParsing="false" selected="true" text="Auto">
+      									<padding>
+      										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      									</padding>
+      									<toggleGroup>
+      										<ToggleGroup fx:id="frequencyRadioButton" />
+      									</toggleGroup>
+      								</RadioButton>
+      								<RadioButton mnemonicParsing="false" text="User" toggleGroup="$frequencyRadioButton">
+      									<padding>
+      										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      									</padding>
+      								</RadioButton>
+      							</children>
+      						</HBox>
+      					</children>
+      				</VBox>
+						<TextField disable="true" promptText="100Hz" />
+      			</children>
+      		</AnchorPane>
+      	</right>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Untitled Tab 1">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                  				<ScatterChart fx:id="fxChart" alternativeColumnFillVisible="true" prefHeight="746.0" prefWidth="1100.0" title="Force in function of displacement" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  					<xAxis>
+                  						<NumberAxis label="Displacement [mm]" side="BOTTOM" />
+                  					</xAxis>
+                  					<yAxis>
+                  						<NumberAxis label="Force [N]" side="LEFT" />
+                  					</yAxis>
+                  				</ScatterChart>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Untitled Tab 2">
+                  <content>
+                    <AnchorPane>
+                           <children>
+                  				<ScatterChart fx:id="ftChart" prefHeight="746.0" prefWidth="1100.0" scaleShape="false" style="-fx-pref-width: 100%;" title="Force in function of time" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  					<xAxis>
+                  						<NumberAxis label="Time [s]" side="BOTTOM" />
+                  					</xAxis>
+                  					<yAxis>
+                  						<NumberAxis label="Force [N]" side="LEFT" />
+                  					</yAxis>
+                  				</ScatterChart>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <bottom>
+      		<AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      			<children>
+      				<ListView fx:id="lvParameterList" layoutX="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+				</ListView>
+      			</children>
+      
+            		</AnchorPane>
+         </bottom>
+      </BorderPane>
+   </content>
+</ScrollPane>

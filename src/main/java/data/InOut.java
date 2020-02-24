@@ -1,7 +1,5 @@
 package data;
 
-import javafx.stage.FileChooser;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
