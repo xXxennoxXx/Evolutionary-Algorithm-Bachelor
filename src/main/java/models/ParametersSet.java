@@ -14,12 +14,12 @@ public class ParametersSet implements Geneticable {
     }
 
     @Override
-    public void cross(ParametersSet p1, ParametersSet p2) {
+    public void cross(ParametersSet p1) {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void mutate(ParametersSet p) {
+    public void mutate() {
         throw new UnsupportedOperationException();
     }
 
