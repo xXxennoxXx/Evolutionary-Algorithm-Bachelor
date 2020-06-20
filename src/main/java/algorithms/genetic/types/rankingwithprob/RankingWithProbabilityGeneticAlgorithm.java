@@ -20,7 +20,7 @@ public class RankingWithProbabilityGeneticAlgorithm extends GeneticAlgorithm {
     public RankingWithProbabilityGeneticAlgorithm(Integer countOfPopulations,
                                                   Integer countOfSets,
                                                   Model modelName,
-                                                  ProbType probType,
+                                                  RankProbType probType,
                                                   Integer mutateChance,
                                                   Integer crossChance) {
         super(countOfPopulations, countOfSets, modelName);

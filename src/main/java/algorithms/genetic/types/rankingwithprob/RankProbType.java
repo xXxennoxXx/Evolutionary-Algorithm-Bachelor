@@ -3,7 +3,7 @@ package algorithms.genetic.types.rankingwithprob;
 import java.util.ArrayList;
 import java.util.List;
 
-public enum ProbType {
+public enum RankProbType {
 
     LINEAR {
         @Override
