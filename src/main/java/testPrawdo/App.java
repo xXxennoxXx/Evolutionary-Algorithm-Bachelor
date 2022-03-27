@@ -61,7 +61,7 @@ class A {
 }
 
 public class App {
-	public static void main(String[] args) throws InterruptedException {
+	public  void main(String[] args) throws InterruptedException {
 		A a = new A();
 		a.a();
 

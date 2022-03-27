@@ -1,127 +1,35 @@
 package application;
 
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 public class ParametrPoint {
-    Double wt;
-    Double ksit;
-    Double alfat;
-    Double gammat;
-    Double at;
-    Double betat;
-    Double nt;
-    Double wc;
-    Double ksic;
-    Double alfac;
-    Double gammac;
-    Double ac;
-    Double betac;
-    Double nc;
-    Double deflection;
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((ac == null) ? 0 : ac.hashCode());
-        result = prime * result + ((alfac == null) ? 0 : alfac.hashCode());
-        result = prime * result + ((alfat == null) ? 0 : alfat.hashCode());
-        result = prime * result + ((at == null) ? 0 : at.hashCode());
-        result = prime * result + ((betac == null) ? 0 : betac.hashCode());
-        result = prime * result + ((betat == null) ? 0 : betat.hashCode());
-        result = prime * result + ((gammac == null) ? 0 : gammac.hashCode());
-        result = prime * result + ((gammat == null) ? 0 : gammat.hashCode());
-        result = prime * result + ((ksic == null) ? 0 : ksic.hashCode());
-        result = prime * result + ((ksit == null) ? 0 : ksit.hashCode());
-        result = prime * result + ((nc == null) ? 0 : nc.hashCode());
-        result = prime * result + ((nt == null) ? 0 : nt.hashCode());
-        result = prime * result + ((wc == null) ? 0 : wc.hashCode());
-        result = prime * result + ((wt == null) ? 0 : wt.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        ParametrPoint other = (ParametrPoint) obj;
-        if (ac == null) {
-            if (other.ac != null)
-                return false;
-        } else if (!ac.equals(other.ac))
-            return false;
-        if (alfac == null) {
-            if (other.alfac != null)
-                return false;
-        } else if (!alfac.equals(other.alfac))
-            return false;
-        if (alfat == null) {
-            if (other.alfat != null)
-                return false;
-        } else if (!alfat.equals(other.alfat))
-            return false;
-        if (at == null) {
-            if (other.at != null)
-                return false;
-        } else if (!at.equals(other.at))
-            return false;
-        if (betac == null) {
-            if (other.betac != null)
-                return false;
-        } else if (!betac.equals(other.betac))
-            return false;
-        if (betat == null) {
-            if (other.betat != null)
-                return false;
-        } else if (!betat.equals(other.betat))
-            return false;
-        if (gammac == null) {
-            if (other.gammac != null)
-                return false;
-        } else if (!gammac.equals(other.gammac))
-            return false;
-        if (gammat == null) {
-            if (other.gammat != null)
-                return false;
-        } else if (!gammat.equals(other.gammat))
-            return false;
-        if (ksic == null) {
-            if (other.ksic != null)
-                return false;
-        } else if (!ksic.equals(other.ksic))
-            return false;
-        if (ksit == null) {
-            if (other.ksit != null)
-                return false;
-        } else if (!ksit.equals(other.ksit))
-            return false;
-        if (nc == null) {
-            if (other.nc != null)
-                return false;
-        } else if (!nc.equals(other.nc))
-            return false;
-        if (nt == null) {
-            if (other.nt != null)
-                return false;
-        } else if (!nt.equals(other.nt))
-            return false;
-        if (wc == null) {
-            if (other.wc != null)
-                return false;
-        } else if (!wc.equals(other.wc))
-            return false;
-        if (wt == null) {
-            return other.wt == null;
-        } else return wt.equals(other.wt);
-    }
-
-    public ParametrPoint() {
-    }
+    public Double wt;
+    public Double ksit;
+    public Double alfat;
+    public Double gammat;
+    public Double at;
+    public Double betat;
+    public Double nt;
+    public Double wc;
+    public Double ksic;
+    public Double alfac;
+    public Double gammac;
+    public Double ac;
+    public Double betac;
+    public Double nc;
+    public Double deflection;
 
     public ParametrPoint(ParametrPoint old) {
         this.wt = old.wt;
@@ -139,18 +47,6 @@ public class ParametrPoint {
         this.betac = old.betac;
         this.nc = old.nc;
     }
-
-//	@Override
-//	public String toString() {
-//		return "deflection=" + String.format("%10.5e", deflection) + ",  wt=" + String.format("%10.2f", wt) + ", ksit="
-//				+ String.format("%10.2f", ksit) + ", alfat=" + String.format("%10.2f", alfat) + ", gammat="
-//				+ String.format("%10.2f", gammat) + ", at=" + String.format("%10.2f", at) + ", betat="
-//				+ String.format("%10.2f", betat) + ", nt=" + String.format("%10.2f", nt) + ", wc="
-//				+ String.format("%10.2f", wc) + ", ksic=" + String.format("%10.2f", ksic) + ", alfac="
-//				+ String.format("%10.2f", alfac) + ", gammac=" + String.format("%10.2f", gammac) + ", ac="
-//				+ String.format("%10.2f", ac) + ", betac=" + String.format("%10.2f", betac) + ", nc="
-//				+ String.format("%10.2f", nc);
-//	}
 
     public void generateParameters() {
 

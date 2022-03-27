@@ -1,5 +1,9 @@
 package application;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+@Getter
+@NoArgsConstructor
 public class Point {
 	public Double x;
 	public Double expF;
@@ -13,12 +17,5 @@ public class Point {
 	public String toString() {
 		return String.format("%s", F);
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Point [x=" + String.format("%10.2f", x) + ", expF=" + String.format("%10.2f", expF) + ", F="
-//				+ String.format("%10.2f", F) + ", z=" + String.format("%10.2f", z) + ", v=" + String.format("%10.2f", v)
-//				+ ", a=" + String.format("%10.2f", a) + ", zp=" + String.format("%10.2f", zp) + "]";
-//	}
 
 }

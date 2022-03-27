@@ -2,7 +2,7 @@ package test;
 
 public class App {
 
-	public static void main(String[] args) {
+	public  void main(String[] args) {
 		int sigma = 33;
 		int sizeOfPopulation = 100;
 		double max = 10 / (sigma * Math.sqrt(Math.PI * 2))

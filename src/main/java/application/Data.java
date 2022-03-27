@@ -9,14 +9,13 @@ import java.util.regex.Pattern;
 import static java.util.Objects.requireNonNull;
 
 public class Data {
-    File file;
     public int mutateChance;
     public int crossChance;
-    ArrayList<Integer> choice = new ArrayList<Integer>();
-    ArrayList<Double> prob = new ArrayList<Double>();
-    ArrayList<String> def = new ArrayList<String>();
-    ArrayList<Point> listOfPoint = new ArrayList<Point>();
-    ArrayList<ParametrPoint> listOfParametrs = new ArrayList<ParametrPoint>();
+    public List<Integer> choice = new ArrayList<>();
+    public List<Double> prob = new ArrayList<>();
+    public List<String> def = new ArrayList<>();
+    public List<Point> listOfPoint = new ArrayList<>();
+    public List<ParametrPoint> listOfParametrs = new ArrayList<>();
     Integer[][] zadanie = {{10, 1}, {20, 1}, {50, 1}, {100, 1}, {200, 1}, {500, 1},};
 
     public void setParameters() {
@@ -106,36 +105,7 @@ public class Data {
         parametr.deflection = curentParametrDeflection;
     }
 
-    public void evolveTab(int population) {
-        int stay = population / 4;
-        for (int b = 0; b < population; b++) {
-            for (int a = b + 1; a < population; a++) {
-                if (listOfParametrs.get(a).equals(listOfParametrs.get(b))) {
-                    listOfParametrs.get(a).mutate();
-                }
-            }
-        }
-        for (int c = 0; c < stay; c++) {
-            int d = new Random().nextInt(stay - c) + c + 1;
-            ParametrPoint par11 = new ParametrPoint(listOfParametrs.get(c));
-            ParametrPoint par22 = new ParametrPoint(listOfParametrs.get(d));
-            ParametrPoint.cross(par11, par22);
-            for (int a = 0; a < 2; a++) {
-                listOfParametrs.remove(stay);
-            }
-            listOfParametrs.add(par22);
-            listOfParametrs.add(par11);
-        }
-        while (listOfParametrs.size() > population) {
-            listOfParametrs.remove(population / 2);
-        }
-        for (int i = 0; i < stay; i++) {
-            ParametrPoint par = new ParametrPoint(listOfParametrs.get(i));
-            listOfParametrs.remove(stay);
-            par.mutate();
-            listOfParametrs.add(par);
-        }
-    }
+
 
     public void evolveRanks(int population) {
         double max = prob.get(prob.size() - 1);
@@ -160,36 +130,8 @@ public class Data {
         }
     }
 
-    public void evolveRanksWithProb(int population) {
-        int countMutate = population * mutateChance / 100;
-        int countCross = population * crossChance / 100;
-        for (int i = 0; i < countMutate; i++) {
-            double c = ThreadLocalRandom.current().nextDouble(0, prob.get(prob.size() - 1));
-            int j = 0;
-            while (c > prob.get(j)) {
-                j++;
-            }
-            listOfParametrs.get(j).mutate();
-            choice.add(j);
-        }
-        for (int i = 0; i < countCross; i++) {
-            double c = ThreadLocalRandom.current().nextDouble(0, prob.get(prob.size() - 1));
-            double d = ThreadLocalRandom.current().nextDouble(0, prob.get(prob.size() - 1));
-            int j = 0;
-            int k = 0;
-            while (c > prob.get(j)) {
-                j++;
-            }
-            while (d > prob.get(k)) {
-                k++;
-            }
-            ParametrPoint.cross(listOfParametrs.get(j), listOfParametrs.get(k));
-            choice.add(j);
-            choice.add(k);
-        }
-    }
 
-    public void save(ArrayList list, String fileName) {
+    public void save(Collection<?> list, String fileName) {
         try (BufferedWriter out = new BufferedWriter(new FileWriter(fileName))) {
             for (Object p : list) {
                 out.write(p.toString());
