@@ -5,10 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 
 
 import static java.util.Objects.requireNonNull;
 
+@Slf4j
 public class MainApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
@@ -19,7 +21,7 @@ public class MainApplication extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error during start up", e);
         }
     }
 

@@ -1,4 +1,4 @@
-package pl.xenox;
+package pl.xenox.gui;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -21,6 +21,9 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import pl.xenox.Data;
+import pl.xenox.ParametrPoint;
+import pl.xenox.Point;
 
 public class MainController implements Initializable {
     Data data;

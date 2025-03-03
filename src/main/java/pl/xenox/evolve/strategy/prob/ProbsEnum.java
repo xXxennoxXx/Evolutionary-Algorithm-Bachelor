@@ -3,12 +3,11 @@ package pl.xenox.evolve.strategy.prob;
 import java.util.function.Supplier;
 
 public enum ProbsEnum {
-    None(null),
-    Liniowy(Liniowy::new),
-    LiniowyZPrawdo(LiniowyZPrawdo::new),
-    Gaussa(Gaussa::new),
-    GaussaZPrawdo(GaussaZPrawdo::new);
-
+    NONE(null),
+    LINIOWY(Liniowy::new),
+    LINIOWY_Z_PRAWDO(LiniowyZPrawdo::new),
+    GAUSSA(Gaussa::new),
+    GAUSSA_Z_PRAWDO(GaussaZPrawdo::new);
 
     private final Supplier<Probs> supplier;
 

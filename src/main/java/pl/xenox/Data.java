@@ -16,7 +16,7 @@ public class Data {
     public List<String> def = new ArrayList<>();
     public List<Point> listOfPoint = new ArrayList<>();
     public List<ParametrPoint> listOfParametrs = new ArrayList<>();
-    Integer[][] zadanie = {{10, 1}, {20, 1}, {50, 1}, {100, 1}, {200, 1}, {500, 1},};
+    public Integer[][] zadanie = {{10, 1}, {20, 1}, {50, 1}, {100, 1}, {200, 1}, {500, 1},};
 
     public void setParameters() {
         ParametrPoint parameters = new ParametrPoint();
@@ -104,7 +104,6 @@ public class Data {
         }
         parametr.deflection = curentParametrDeflection;
     }
-
 
 
     public void evolveRanks(int population) {
