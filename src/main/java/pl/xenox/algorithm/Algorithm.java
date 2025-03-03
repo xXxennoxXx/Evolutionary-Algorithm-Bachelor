@@ -1,7 +1,7 @@
-package application.algorithm;
+package pl.xenox.algorithm;
 
-import application.ParametrPoint;
-import application.Point;
+import pl.xenox.ParametrPoint;
+import pl.xenox.Point;
 
 import java.util.List;
 

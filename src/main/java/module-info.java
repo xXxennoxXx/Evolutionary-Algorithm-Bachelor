@@ -5,8 +5,8 @@ module application {
     requires org.slf4j;
 
 
-    opens application to javafx.fxml;
-    exports application;
-    exports application.algorithm;
-    opens application.algorithm to javafx.fxml;
+    opens pl.xenox to javafx.fxml;
+    exports pl.xenox;
+    exports pl.xenox.algorithm;
+    opens pl.xenox.algorithm to javafx.fxml;
 }

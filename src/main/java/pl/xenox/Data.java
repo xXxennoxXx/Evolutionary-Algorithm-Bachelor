@@ -1,4 +1,4 @@
-package application;
+package pl.xenox;
 
 import java.io.*;
 import java.util.*;

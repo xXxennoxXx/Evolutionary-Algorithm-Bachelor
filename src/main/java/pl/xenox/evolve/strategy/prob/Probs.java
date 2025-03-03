@@ -1,4 +1,4 @@
-package application.evolve.strategy.prob;
+package pl.xenox.evolve.strategy.prob;
 
 import java.util.List;
 

@@ -1,6 +1,4 @@
-package application.evolve.strategy.prob;
-
-import application.Data;
+package pl.xenox.evolve.strategy.prob;
 
 import java.util.ArrayList;
 import java.util.List;

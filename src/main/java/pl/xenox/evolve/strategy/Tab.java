@@ -1,8 +1,7 @@
-package application.evolve.strategy;
+package pl.xenox.evolve.strategy;
 
-import application.ParametrPoint;
+import pl.xenox.ParametrPoint;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package testPrawdo;
+package pl.xenox.testPrawdo;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

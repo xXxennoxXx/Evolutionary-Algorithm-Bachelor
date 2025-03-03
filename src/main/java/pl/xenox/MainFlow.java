@@ -1,8 +1,8 @@
-package application;
+package pl.xenox;
 
-import application.algorithm.Algorithm;
-import application.evolve.strategy.Evolution;
-import application.evolve.strategy.prob.ProbsEnum;
+import pl.xenox.algorithm.Algorithm;
+import pl.xenox.evolve.strategy.Evolution;
+import pl.xenox.evolve.strategy.prob.ProbsEnum;
 import lombok.Builder;
 
 import java.util.ArrayList;

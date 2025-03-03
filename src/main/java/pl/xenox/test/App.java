@@ -1,4 +1,4 @@
-package test;
+package pl.xenox.test;
 
 public class App {
 

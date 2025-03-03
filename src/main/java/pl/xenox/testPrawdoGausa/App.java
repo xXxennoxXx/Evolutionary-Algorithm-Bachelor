@@ -1,4 +1,4 @@
-package testPrawdoGausa;
+package pl.xenox.testPrawdoGausa;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
